@@ -22,3 +22,24 @@ const fizzBuzz2 = _.cond([
     [shouldFireBuzz, outputBuzz],
     [shouldReturnInput, outputNumber ]
 ]);
+
+
+// spotting issues
+
+const chooseBetweenSummerColors = cond([
+    [isItWarm, chooseWhite],
+    [isItWindy, chooseGreen],
+    [otherwise, chooseLeastUsedColor]
+]);
+
+const chooseBetweenWinterColors = cond([
+    [isSkyBlue, chooseFirstColor],
+    [isSnowOutside, chooseBlue],
+    [otherwise, raiseError]
+]);
+
+const chooseAColor= cond([
+    [isItSummer, chooseBetweenWinterColors],
+    [isItWinter, chooseBetweenSummerColors],
+    [otherwiseMidSeason, chooseBlue],
+]);
